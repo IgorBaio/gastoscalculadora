@@ -15,14 +15,46 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.vougan.gastoscaculator"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.vougan.gastoscaculator"
+      "package": "com.vougan.gastoscaculator",
+      "config": {
+        "googleSignIn": {
+          "apiKey": "buildkey"
+        },
+        "eas": {
+          "runtimeVersion": "1.0.0",
+          "build": {
+            "android": {
+              "release": {
+                "keystore": "./buildkey.keystore",
+                "keystoreAlias": "buildkey",
+                "keystorePassword": "123456",
+                "keyPassword": "123456"
+              }
+            }
+          }
+        }
+      },
+      "useNextNotificationsApi": true,
+      "permissions": [],
+      "googleServicesFile": "./google-services.json",
+      "publishBundlePath": "android/app/.aab",
+      "intentFilters": [
+        {
+          "action": "MAIN",
+          "autoVerify": true,
+          "category": [
+            "ANDROID_APP_ACTION"
+          ]
+        }
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
